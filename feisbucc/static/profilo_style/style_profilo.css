@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #3897f0;
+}
+
+
+
+.containernav {
+    width: 90%;
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 935px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    flex: 0 0 auto;
+    margin-right: 30px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.username {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.edit-profile {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 5px 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.stats {
+    display: flex;
+    margin-top: 20px;
+}
+
+.stat {
+    margin-right: 40px;
+}
+
+.number {
+    font-weight: 600;
+}
+
+.bio {
+    margin-top: 20px;
+}
+
+.bio a {
+    color: #00376b;
+    text-decoration: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.gallery-item {
+    width: calc(33.333% - 10px);
+    margin: 5px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

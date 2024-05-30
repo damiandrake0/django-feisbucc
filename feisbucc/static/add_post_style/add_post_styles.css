@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #3897f0;
+}
+
+
+
+.containernav {
+    width: 90%;
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.add-post {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="file"] {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+input[type="text"],
+textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-btn {
+    background-color: #3897f0;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #3077c9;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profile</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'profilo_style/style_profilo.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar"></div>
+            <div class="containernav">
+                <h1 class="logo">Feisbucc</h1>
+                <nav>
+                    <ul>
+                        {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'addPost' %}">Add Post</a></li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Signup</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        
+        <div class="profile-pic">
+            <img src="{{ profiloL.profile_pic.url }}" alt="Profile Picture">
+        </div> 
+        <div class="profile-info">
+            <h1 class="username">{{ profiloL.user}}</h1>
+
+            {% if logg %}
+                <button class="edit-profile" ><a href="{% url 'editProfile' profiloL.id %}">Edit Profile</a></button>
+            {% else %}
+                <button class="edit-profile" ><a href="{% url 'follow' profiloL.id %}">Follow</a></button>
+            {% endif %}
+            <div class="stats">
+                <div class="stat">
+                    <span class="number">{{numeroPost}}</span> posts
+                </div>
+                <div class="stat">
+                    <span class="number">{{profiloL.n_followere}}</span> followers
+                </div>
+                <div class="stat">
+                    <span class="number">{{ profiloL.n_following }}</span> following
+                </div>
+            </div>
+            <div class="bio">
+                <p><strong>fullname: {{profiloL.fullname}}</strong></p>
+                <p><strong>mail: {{profiloL.mail}}</strong></p>
+                <p>{{profiloL.bio}}</p>
+                <!-- <a href="#">website.com</a> -->
+            </div>
+        </div>
+      
+    </div>
+    <hr>
+    <main>
+        <div class="gallery">
+            {% for post in listPost %}
+            <div class="gallery-item">
+                <img src="{{ post.image_post.url }}" alt="Photo 1">
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

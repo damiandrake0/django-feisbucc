@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feisbucc Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'stile/home-styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar"></div>
+            <div class="container">
+                <h1 class="logo">Feisbucc</h1>
+                <nav>
+                    <ul>
+                        {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'addPost' %}">Add Post</a></li>
+                            <li><a href="{% url 'profile' 9999999999 %}">Profile</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Signup</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+   
+    <main>
+        
+        <div class="stories">
+            {% for friend in listFriend %}     
+            <div class="story">
+                <img src="{{ friend.profile_pic.url }}" alt="Profile Picture" class="profile-pic" > <!--{{friend.immagine}} -->
+                <span class="username" ><a href="{% url 'profile' friend.id %}">{{friend.user.username}}</a></span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="feed">
+
+            {% for post in listPost%}
+            <div class="post">
+                <div class="user-info">
+                    <img src="{{ post.get_profilePic.url }}" alt="Profile Picture" class="profile-pic">
+                    <span class="username">{{ post.author.username}}</span>
+                </div>
+                <img src="{{ post.image_post.url }}" alt="Post Image" class="post-image">
+                <div class="post-info">
+                    <div class="likes-section">
+
+                        <button class="like-button"><a href="{% url 'like' post.id %}">🖤</a></button>
+                        <span class="likes">{{post.total_likes}}</span>
+                        
+                    </div>
+                    <p><span class="username">{{ post.author.username}}:</span> {{ post.caption }}</p>
+                    <p>{{post.post_date}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Add more posts as needed -->
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-family: 'Billabong', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #3897f0;
+}
+
+
+
+.container {
+    width: 90%;
+    max-width: 935px;
+    margin: 0 auto;
+}
+
+.stories-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.scroll-button {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stories {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 10px 0;
+    margin: 0 35px;
+    margin-top: 10px; /* Aggiornato il margine per lasciare spazio per i pulsanti di scorrimento */
+    overflow-x:auto; /* Nasconde la barra di scorrimento */
+}
+
+.story {
+    flex: 0 0 auto;
+    width: 80px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.story img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #dbdbdb;
+}
+
+.story .username {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.feed {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.post {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.user-info .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-info .username {
+    font-weight: bold;
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+}
+
+.post-info {
+    padding: 15px;
+}
+
+.likes-section {
+    display: flex;
+    align-items: center;
+}
+
+.likes {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.post-info {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* .post-info .username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.post-info .comments {
+    margin-top: 10px;
+}
+
+.post-info .comments p {
+    margin: 5px 0;
+}
+
+.post-info .comments .username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.add-comment {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin-top: 10px;
+} */

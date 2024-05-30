@@ -25,10 +25,6 @@ class PostForm(ModelForm):
         model = Post
         fields = ['image_post','caption']
 
-        # widgets = {
-        #     'image_post':forms.FileInput(),
-        #     'caption':forms.TextInput(attrs={'placeholder':'aggiungi una descrizione...'})
-        # }
 
 class EditProfile(ModelForm):
     class Meta:

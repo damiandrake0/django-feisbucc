@@ -8,6 +8,7 @@ from .models import Profile,Post
 def feisbucc(request):
     listFriend = Profile.objects.all()
     listPost = Post.objects.all()
+    
 
     context = {
         'listFriend':listFriend,
@@ -54,15 +55,15 @@ def like(request,id_post):
 
     return redirect('home')
 
-def following(request,id_profile):
-    # profilo = Profile.objects.get(user=request.user)
-    profile = Profile.objects.get(pk=id_profile)
-    # if request.user in profile.follows.all():
-    #     profile.follows.remove(request.user)
-    # else:
-    profile.follows.add(request.user)
+# def following(request,id_profile):
     
-    return redirect('home')
+#     profile = Profile.objects.get(pk=id_profile)
+#     if request.user in profile.follows.all():
+#         profile.follows.remove(request.user)
+#     else:
+#         profile.follows.add(request.user)
+    
+#     return redirect('home')
 
 def add_post(request):
     if request.method == "POST":
@@ -84,6 +85,16 @@ def profileV(request,profile_id):
         profiloL = Profile.objects.get(pk=profile_id)
         listPost = Post.objects.filter(author=profiloL.user)
     
+    if request.method == "POST":
+        current_user_profile = request.user.profile
+        action = request.POST.get("follow")
+
+        if action == "follow":
+            current_user_profile.follows.add(profiloL)
+        elif action == "unfollow":
+            current_user_profile.follows.remove(profiloL)
+        current_user_profile.save()
+
     n = listPost.count()
 
     if request.user == profiloL.user:

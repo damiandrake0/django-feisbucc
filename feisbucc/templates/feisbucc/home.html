@@ -50,9 +50,16 @@
                 <img src="{{ post.image_post.url }}" alt="Post Image" class="post-image">
                 <div class="post-info">
                     <div class="likes-section">
-
-                        <button class="like-button"><a href="{% url 'like' post.id %}">🖤</a></button>
-                        <span class="likes">{{post.total_likes}}</span>
+                        {% if request.user.is_authenticated %}
+                            {% if request.user in post.likes.all %}
+                                <a href="{% url 'like' post.id %}"><p>❤️</p></a>
+                                <span class="likes">{{post.total_likes}}</span>
+                            {% else %}
+                                <a href="{% url 'like' post.id %}"><p>🖤</p></a>
+                                <span class="likes">{{post.total_likes}}</span>
+                            {% endif %}
+                            
+                        {%endif%}
                         
                     </div>
                     <p><span class="username">{{ post.author.username}}:</span> {{ post.caption }}</p>

@@ -40,7 +40,15 @@
             {% if logg %}
                 <button class="edit-profile" ><a href="{% url 'editProfile' profiloL.id %}">Edit Profile</a></button>
             {% else %}
-                <button class="edit-profile" ><a href="{% url 'follow' profiloL.id %}">Follow</a></button>
+             
+                <form method="POST">
+                    {% csrf_token %}
+                    {% if profiloL in user.profile.follows.all %}
+                        <button class="edit-profile" name="follow" value="unfollow">Unfollow</button>
+                    {% else %}
+                        <button class="edit-profile" name="follow" value="follow">Follow</button>
+                    {% endif %}
+                </form>
             {% endif %}
             <div class="stats">
                 <div class="stat">

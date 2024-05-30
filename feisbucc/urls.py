@@ -10,7 +10,5 @@ urlpatterns = [
     path('addPost/',views.add_post,name='addPost'),
     path('profile/<profile_id>',views.profileV,name='profile'),
     path('editProfile/<profile_id>',views.edit_profile,name='editProfile'),
-    path('like/<id_post>',views.like,name='like'),
-    path('profile/follow/<profile_id>',views.following,name='follow')#,
-    # path('remlike/<id_post>',views.remlike,name='remlike')
+    path('like/<id_post>',views.like,name='like')
 ]
